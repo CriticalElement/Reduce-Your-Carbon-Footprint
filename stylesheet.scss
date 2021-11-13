@@ -1,0 +1,40 @@
+@use "sass:color" as *;
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+$primary: #ffffff;
+$secondary: scale($primary, $lightness: -5%);
+$tertiary: scale($primary, $lightness: -2%);
+$accent-1: #32e35e;
+$accent-2: #27bee8;
+$accent-1-dark: scale($accent-1, $lightness: -5%);
+$accent-2-dark: scale($accent-2, $lightness: -5%);
+$main-font: 'Lexend', sans-serif;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: $primary; 
+    font-family: $main-font;
+}
+
+.header {
+    height: 3.25rem;
+    width: 100%;
+    background: scale($secondary, $alpha: -60%);
+    box-shadow: 0px 0px 1rem #b1b1b1;
+    backdrop-filter: blur(4px);
+    position: fixed;
+    top: 0;
+}
+
+.main {
+    & section:nth-child(even) {
+        background-color: $tertiary;
+    }
+    .section {
+        height: calc(100vh - 3.25rem);
+        min-height: 50rem;
+        max-height: 80rem;
+    }
+}
