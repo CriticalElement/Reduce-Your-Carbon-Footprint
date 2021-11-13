@@ -3,7 +3,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background: #ffffff;
   font-family: "Lexend", sans-serif;
 }
 
@@ -15,15 +15,58 @@
   backdrop-filter: blur(4px);
   position: fixed;
   top: 0;
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .icon {
+  height: 2.75rem;
+  width: 2.75rem;
+  cursor: pointer;
+}
+.header .icon .outercircle {
+  fill: rgba(0, 0, 0, 0);
+  transition: 300ms;
+}
+.header .icon:hover .outercircle {
+  fill: #27bee8;
+}
+.header .icon .fill1, .header .icon .fill2 {
+  stroke: rgba(0, 0, 0, 0);
+  transition: 300ms;
+}
+.header .icon:hover .fill1, .header .icon:hover .fill2 {
+  stroke: #32e35e;
+}
+.header .spacer {
+  flex-grow: 3;
+  max-width: 50%;
+}
+.header .headerbutton {
+  height: 2.25rem;
+  width: 5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: transparent;
+  border: none;
+  transition: all 300ms;
+}
+.header .headerbutton:hover {
+  background-color: #32e35e;
 }
 
 .main section:nth-child(even) {
-  background-color: #fafafa;
+  background: #fafafa;
 }
 .main .section {
   height: calc(100vh - 3.25rem);
   min-height: 50rem;
   max-height: 80rem;
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
