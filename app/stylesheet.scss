@@ -8,6 +8,8 @@ $accent-1: #32e35e;
 $accent-2: #27bee8;
 $accent-1-dark: scale($accent-1, $lightness: -5%);
 $accent-2-dark: scale($accent-2, $lightness: -5%);
+$accent-1-light: scale($accent-1, $lightness: 60%);
+$accent-2-light: scale($accent-2, $lightness: 60%);
 $selection: #b8b8b870;
 $main-font: 'Lexend', sans-serif;
 
@@ -30,6 +32,7 @@ $main-font: 'Lexend', sans-serif;
     background: scale($secondary, $alpha: -60%);
     box-shadow: 0px 0px 1rem #b1b1b1;
     backdrop-filter: blur(4px);
+    z-index: 5;
     position: fixed;
     top: 0;
     display: flex;
@@ -88,13 +91,75 @@ $main-font: 'Lexend', sans-serif;
 
 .main {
     & section:nth-child(even) {
-        background: $tertiary;
+        background: $accent-1-light;
     }
+
+    & section:nth-child(odd) {
+        background: $accent-2-light;
+    }
+    
     .section {
-        height: calc(100vh - 3.25rem);
-        min-height: 50rem;
-        max-height: 80rem;
-        padding-top: 3.25rem;
-        padding-bottom: 3.25rem;
+        padding: 3.25rem;
+        box-sizing: border-box;
+        position: relative;
+        height: 100vh;
+        min-height: 40rem;
+
+        @mixin circle($col, $posleft, $postop) {
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+            background: scale($col, $alpha: -60%);
+            backdrop-filter: blur(4px);
+            position: absolute;
+            left: $posleft;
+            top: $postop;
+            opacity: 0;
+            animation: dropIn 2s forwards;
+        }
+
+        @keyframes dropIn {
+            from {
+                opacity: 0;
+                transform: translateY(-60%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .circle1 {
+            @include circle($accent-1, 9%, 25%);
+            animation-delay: 0ms;
+        }
+
+        .circle2 {
+            @include circle($accent-2, 14%, 17%);
+            animation-delay: 500ms;
+        }
+
+        .title {
+            font-size: clamp(30px, 5vw, 50px);
+            position: absolute;
+            padding-right: 6rem;
+            padding-bottom: 3.25rem;
+            left: 21%;
+            top: 18%;
+            background: transparent;
+            animation: dropIn 2s;
+        }
+
+        .text {
+            font-size: clamp(15px, 3vw, 20px);
+            font-weight: lighter;
+            margin-top: 2rem;
+            background: transparent;
+            opacity: 0;
+            animation: dropIn 2s forwards;
+            animation-delay: 1500ms;
+        }
+
     }
 }

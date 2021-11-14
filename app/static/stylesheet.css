@@ -16,6 +16,7 @@
   background: rgba(242, 242, 242, 0.4);
   box-shadow: 0px 0px 1rem #b1b1b1;
   backdrop-filter: blur(4px);
+  z-index: 5;
   position: fixed;
   top: 0;
   display: flex;
@@ -63,14 +64,72 @@
 }
 
 .main section:nth-child(even) {
-  background: #fafafa;
+  background: #adf4bf;
+}
+.main section:nth-child(odd) {
+  background: #a9e5f6;
 }
 .main .section {
-  height: calc(100vh - 3.25rem);
-  min-height: 50rem;
-  max-height: 80rem;
-  padding-top: 3.25rem;
+  padding: 3.25rem;
+  box-sizing: border-box;
+  position: relative;
+  height: 100vh;
+  min-height: 40rem;
+}
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-60%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.main .section .circle1 {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background: rgba(50, 227, 94, 0.4);
+  backdrop-filter: blur(4px);
+  position: absolute;
+  left: 9%;
+  top: 25%;
+  opacity: 0;
+  animation: dropIn 2s forwards;
+  animation-delay: 0ms;
+}
+.main .section .circle2 {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background: rgba(39, 190, 232, 0.4);
+  backdrop-filter: blur(4px);
+  position: absolute;
+  left: 14%;
+  top: 17%;
+  opacity: 0;
+  animation: dropIn 2s forwards;
+  animation-delay: 500ms;
+}
+.main .section .title {
+  font-size: clamp(30px, 5vw, 50px);
+  position: absolute;
+  padding-right: 6rem;
   padding-bottom: 3.25rem;
+  left: 21%;
+  top: 18%;
+  background: transparent;
+  animation: dropIn 2s;
+}
+.main .section .text {
+  font-size: clamp(15px, 3vw, 20px);
+  font-weight: lighter;
+  margin-top: 2rem;
+  background: transparent;
+  opacity: 0;
+  animation: dropIn 2s forwards;
+  animation-delay: 1500ms;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
