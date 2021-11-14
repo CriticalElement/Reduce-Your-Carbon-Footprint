@@ -6,6 +6,9 @@
   background: #ffffff;
   font-family: "Lexend", sans-serif;
 }
+*::selection {
+  background-color: #b8b8b870;
+}
 
 .header {
   height: 3.25rem;
@@ -24,6 +27,7 @@
 .header .icon {
   height: 2.75rem;
   width: 2.75rem;
+  background: transparent;
   cursor: pointer;
 }
 .header .icon .outercircle {

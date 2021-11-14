@@ -8,6 +8,7 @@ $accent-1: #32e35e;
 $accent-2: #27bee8;
 $accent-1-dark: scale($accent-1, $lightness: -5%);
 $accent-2-dark: scale($accent-2, $lightness: -5%);
+$selection: #b8b8b870;
 $main-font: 'Lexend', sans-serif;
 
 * {
@@ -16,6 +17,11 @@ $main-font: 'Lexend', sans-serif;
     box-sizing: border-box;
     background: $primary; 
     font-family: $main-font;
+
+    &::selection {
+        background-color: $selection;
+    }
+
 }
 
 .header {
@@ -35,6 +41,7 @@ $main-font: 'Lexend', sans-serif;
     .icon {
         height: 2.75rem;
         width: 2.75rem;
+        background: transparent;
 
         & .outercircle {
             fill: rgba(0, 0, 0, 0);

@@ -8,7 +8,7 @@ Api(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html', svg=open('app/static/icon.svg', 'r').read())
+    return render_template('index.html', svg=open('app/static/icon.svg', 'r').read())  # render the svg
 
 
 if __name__ == '__main__':
