@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Reduce Your Carbon Footprint</title>
+    <link rel="stylesheet" href="static/stylesheet.css"/>
+    <link rel="shortcut icon" type="image/svg" href="static/favicon.svg"/>
+    <!--TODO: Setup a github action that compiles the scss to css upon committing-->
+</head>
+<body>
+    <header class="header" id="header">
+        <!--The SVG gets rendered through Flask templates.-->
+        {{svg|safe}}
+        <div class="spacer"></div>
+        <button class="headerbutton" id="homebutton">Home</button>
+        <button class="headerbutton" id="whatbutton">What?</button>
+        <button class="headerbutton" id="whybutton">Why?</button>
+        <button class="headerbutton" id="howbutton">How?</button>
+    </header>
+    <dropdown>
+
+    </dropdown>
+    <section class="main" id="main">
+        <section class="section" id="home">
+
+        </section>
+        <section class="section" id="what">
+
+        </section>
+        <section class="section" id="why">
+
+        </section>
+        <section class="section" id=how>
+
+        </section>
+    </section>
+    <footer>
+        <!---This is where the footer would go, containing various information about the source code and the bpa event.-->
+    </footer>
+</body>
+</html>
