@@ -185,6 +185,10 @@ $main-font: 'Lexend', sans-serif;
             opacity: 0;
             animation: dropIn 2s forwards;
             animation-delay: 3000ms;
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-weight: normal;
         }
 
         .buttoncontainer {
