@@ -126,7 +126,7 @@
   font-size: clamp(1.8vw, 5vw, 50px);
   padding-bottom: 3.25rem;
   padding-left: 14rem;
-  padding-right: 4rem;
+  padding-right: 8rem;
   background: transparent;
   animation: dropIn 2s;
   z-index: 3;
