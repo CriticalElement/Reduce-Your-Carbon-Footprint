@@ -88,8 +88,26 @@ $main-font: 'Lexend', sans-serif;
 
     .headerbutton {
         @include basicbutton();
+        display: block;
     }
 
+    #menubutton {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: grid;
+        place-items: center;
+        display: none;
+    }
+
+    @media only screen and (max-width: 550px) {
+        #menubutton {
+            display: block;
+        }
+
+        .headerbutton {
+            display: none;
+        }
+    }
 }
 
 .main {
@@ -127,7 +145,6 @@ $main-font: 'Lexend', sans-serif;
             left: $posleft;
             top: calc($postop - var(--offset));
             opacity: 0;
-            animation: dropIn 2s forwards;
         }
 
         @keyframes dropIn {
@@ -140,6 +157,10 @@ $main-font: 'Lexend', sans-serif;
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .animation {
+            animation: dropIn 2s forwards;
         }
 
         .circle1 {
@@ -162,7 +183,7 @@ $main-font: 'Lexend', sans-serif;
                 padding-right: 0rem;
             }
             background: transparent;
-            animation: dropIn 2s;
+            opacity: 0;
             z-index: 3;
         }
 
@@ -172,7 +193,6 @@ $main-font: 'Lexend', sans-serif;
             margin-top: 2rem;
             background: transparent;
             opacity: 0;
-            animation: dropIn 2s forwards;
             animation-delay: 1500ms;
         }
 
@@ -181,9 +201,8 @@ $main-font: 'Lexend', sans-serif;
     #home {
         
         .learnmore {
-            font-size: clamp(calc(var(--font-size) + 5px), 4vw, 25px);
+            font-size: clamp(calc(var(--font-size) + 2px), 4vw, 25px);
             opacity: 0;
-            animation: dropIn 2s forwards;
             animation-delay: 3000ms;
             text-align: center;
             margin-left: 10%;
@@ -201,7 +220,6 @@ $main-font: 'Lexend', sans-serif;
             .mainbuttons {
                 @include basicbutton();
                 opacity: 0;
-                animation: dropIn 1s forwards;
                 animation-delay: calc(4000ms + calc(var(--anim-offset) * 500ms));
                 margin-left: 2vw;
                 margin-right: 2vw;
