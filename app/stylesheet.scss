@@ -227,7 +227,7 @@ $main-font: 'Lexend', sans-serif;
         }
 
         .animation {
-            animation: dropIn 2s backwards;
+            animation: dropIn 2s both;
         }
 
         .circle1 {
@@ -244,23 +244,22 @@ $main-font: 'Lexend', sans-serif;
 
         .title {
             font-size: clamp(1.8vw, 5vw, 50px);
-            padding-bottom: 3.25rem;
-            padding-left: 14rem;
-            padding-right: 8rem;
-            @media only screen and (max-width: 900px) {
-                padding-left: 0rem;
-                padding-right: 0rem;
-            }
-            background: transparent;
+            text-align: center;
             z-index: 3;
         }
 
         .text {
             font-size: clamp(var(--font-size), 3vw, 20px);
             font-weight: lighter;
-            margin-top: 2rem;
-            background: transparent;
+            padding-bottom: 2rem;
+            padding-left: 14rem;
+            padding-right: 8rem;
+            @media only screen and (max-width: 900px) {
+                padding-left: 0rem;
+                padding-right: 0rem;
+            }
             animation-delay: 1500ms;
+            z-index: 3;
         }
 
     }

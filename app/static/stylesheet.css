@@ -192,7 +192,7 @@
   }
 }
 .main .section .animation {
-  animation: dropIn 2s backwards;
+  animation: dropIn 2s both;
 }
 .main .section .circle1 {
   width: 15rem;
@@ -220,24 +220,23 @@
 }
 .main .section .title {
   font-size: clamp(1.8vw, 5vw, 50px);
-  padding-bottom: 3.25rem;
-  padding-left: 14rem;
-  padding-right: 8rem;
-  background: transparent;
+  text-align: center;
   z-index: 3;
-}
-@media only screen and (max-width: 900px) {
-  .main .section .title {
-    padding-left: 0rem;
-    padding-right: 0rem;
-  }
 }
 .main .section .text {
   font-size: clamp(var(--font-size), 3vw, 20px);
   font-weight: lighter;
-  margin-top: 2rem;
-  background: transparent;
+  padding-bottom: 2rem;
+  padding-left: 14rem;
+  padding-right: 8rem;
   animation-delay: 1500ms;
+  z-index: 3;
+}
+@media only screen and (max-width: 900px) {
+  .main .section .text {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
 }
 .main #home .learnmore {
   font-size: clamp(var(--font-size) + 2px, 4vw, 25px);
