@@ -195,15 +195,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main {
-    
-    & section:nth-child(even) {
-        background: $accent-1-light;
-    }
 
-    & section:nth-child(odd) {
-        background: $accent-2-light;
-    }
-    
     .section {
         padding: 3.25rem;
         box-sizing: border-box;
@@ -261,7 +253,13 @@ body::-webkit-scrollbar-thumb {
 
         .title {
             font-size: clamp(1.8vw, 5vw, 50px);
-            text-align: center;
+            text-align: left;
+            padding-left: 14rem;
+            padding-right: 4rem;
+            @media only screen and (max-width: 900px) {
+                padding-left: 0rem;
+                padding-right: 0rem;
+            }
             z-index: 3;
         }
 
@@ -269,19 +267,60 @@ body::-webkit-scrollbar-thumb {
             font-size: clamp(var(--font-size), 3vw, 20px);
             font-weight: lighter;
             padding-bottom: 2rem;
-            padding-left: 14rem;
-            padding-right: 8rem;
             @media only screen and (max-width: 900px) {
                 padding-left: 0rem;
                 padding-right: 0rem;
             }
             animation-delay: 1500ms;
             z-index: 3;
+        }          
+
+    }
+
+    & section:nth-child(odd) {
+        background: $accent-2-light;
+    }
+
+    & section:nth-child(even) {
+        background: $accent-1-light;
+
+        .circle1 {
+            left: auto;
+            right: 9%;
+        }
+
+        .circle2 {
+            left: auto;
+            right: 14%;
+        }
+
+        .title {
+            padding-left: 4rem;
+            padding-right: 14rem;
+            @media only screen and (max-width: 900px) {
+                padding-left: 0rem;
+                padding-right: 0rem;
+            }
+            text-align: right;
         }
 
     }
 
     #home {
+
+        .title, .text {
+            padding-left: 10rem;
+            padding-right: 10rem;
+            @media only screen and (max-width: 900px) {
+                padding-left: 0rem;
+                padding-right: 0rem;
+            } 
+        }
+
+        .text {
+            padding-right: 4rem;
+            text-align: left;
+        }
         
         .learnmore {
             font-size: clamp(calc(var(--font-size) + 2px), 4vw, 25px);

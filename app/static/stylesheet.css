@@ -171,12 +171,6 @@ body::-webkit-scrollbar-thumb {
   background-color: #32e35e;
 }
 
-.main section:nth-child(even) {
-  background: #adf4bf;
-}
-.main section:nth-child(odd) {
-  background: #a9e5f6;
-}
 .main .section {
   padding: 3.25rem;
   box-sizing: border-box;
@@ -234,15 +228,21 @@ body::-webkit-scrollbar-thumb {
 }
 .main .section .title {
   font-size: clamp(1.8vw, 5vw, 50px);
-  text-align: center;
+  text-align: left;
+  padding-left: 14rem;
+  padding-right: 4rem;
   z-index: 3;
+}
+@media only screen and (max-width: 900px) {
+  .main .section .title {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
 }
 .main .section .text {
   font-size: clamp(var(--font-size), 3vw, 20px);
   font-weight: lighter;
   padding-bottom: 2rem;
-  padding-left: 14rem;
-  padding-right: 8rem;
   animation-delay: 1500ms;
   z-index: 3;
 }
@@ -251,6 +251,45 @@ body::-webkit-scrollbar-thumb {
     padding-left: 0rem;
     padding-right: 0rem;
   }
+}
+.main section:nth-child(odd) {
+  background: #a9e5f6;
+}
+.main section:nth-child(even) {
+  background: #adf4bf;
+}
+.main section:nth-child(even) .circle1 {
+  left: auto;
+  right: 9%;
+}
+.main section:nth-child(even) .circle2 {
+  left: auto;
+  right: 14%;
+}
+.main section:nth-child(even) .title {
+  padding-left: 4rem;
+  padding-right: 14rem;
+  text-align: right;
+}
+@media only screen and (max-width: 900px) {
+  .main section:nth-child(even) .title {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+}
+.main #home .title, .main #home .text {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+@media only screen and (max-width: 900px) {
+  .main #home .title, .main #home .text {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+}
+.main #home .text {
+  padding-right: 4rem;
+  text-align: left;
 }
 .main #home .learnmore {
   font-size: clamp(var(--font-size) + 2px, 4vw, 25px);
