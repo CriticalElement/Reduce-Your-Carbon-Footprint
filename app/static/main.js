@@ -109,7 +109,7 @@ function handleAnimations(start, startid, end, endid, elementList) {
     };
     let observer = new IntersectionObserver(
         callback, 
-        {threshold: 0.2}
+        {threshold: 0.1}
     );
     observer.observe(start);
     observer.observe(end);
@@ -118,3 +118,76 @@ function handleAnimations(start, startid, end, endid, elementList) {
 animElements.forEach(element => {
     handleAnimations(element.start, element.startid, element.end, element.endid, element.elementList);
 })
+
+// dropdown menu
+const dropdown = document.getElementById("dropdown");
+const buttons = [...document.querySelectorAll(".dropdownbutton"), document.getElementById("dropdownicon")];
+const closebutton = document.getElementById("closebutton");
+var dropdownstate = false;
+
+function open() {
+    dropdown.style.display = "block";
+    dropdown.style.height = "100%";
+    closebutton.style.opacity = "1";
+    closebutton.style.display = "grid";
+    buttons.forEach(button => {
+        button.style.display = "block";
+        button.style.opacity = "1";
+    });
+    dropdownstate = true;
+}
+
+function close() {
+    dropdown.style.height = "0%";
+    closebutton.style.opacity = "0%";
+    buttons.forEach(button => {
+        button.style.opacity = "0%";
+    });
+    dropdownstate = false;
+    setTimeout(() => {
+        if (!dropdownstate) {
+            dropdown.style = "";
+            closebutton.style = "";
+            buttons.forEach(button => {
+                button.style = "";
+            })
+        }
+    }, 500);
+}
+
+const menubutton = document.getElementById("menubutton");
+function openOrClose() {
+    if (dropdownstate) {
+        close();
+    }
+    else {
+        open();
+    }
+}
+menubutton.onclick = () => {
+    openOrClose();
+}
+closebutton.onclick = () => {
+    openOrClose();
+}
+
+const homedropdownbutton = document.getElementById("homedropdownbutton");
+const whatdropdownbutton = document.getElementById("whatdropdownbutton");
+const whydropdownbutton = document.getElementById("whydropdownbutton");
+const howdropdownbutton = document.getElementById("howdropdownbutton");
+homedropdownbutton.onclick = () => {
+    homepage.scrollIntoView({behavior: "smooth"});
+    close();
+}
+whatdropdownbutton.onclick = () => {
+    whatpage.scrollIntoView({behavior: "smooth"});
+    close();
+}
+whydropdownbutton.onclick = () => {
+    whypage.scrollIntoView({behavior: "smooth"});
+    close();
+}
+howdropdownbutton.onclick = () => {
+    howpage.scrollIntoView({behavior: "smooth"});
+    close();
+}

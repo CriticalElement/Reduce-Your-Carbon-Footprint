@@ -125,6 +125,59 @@ $main-font: 'Lexend', sans-serif;
     }
 }
 
+.dropdown {
+    position: fixed;
+    height: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: $primary;
+    transition: all 500ms ease;
+
+    .closebutton {
+        @include basicbutton();
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: calc(calc(3.25rem - 2.5rem) / 2);
+        right: 16px;
+        display: none;
+        opacity: 0;
+        place-items: center;
+        transition: all 500ms ease;
+
+        .dropdownicon {
+            width: 1.75rem;
+            height: 1.75rem;
+            padding-top: 0.25rem;
+            opacity: 0;
+            display: none;
+        }
+
+    }
+
+    .container {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+
+        .dropdownbutton {
+            @include basicbutton();
+            opacity: 0;
+            display: none;
+            transition: all 500ms ease;
+        }
+
+    }
+
+}
+
 .main {
     & section:nth-child(even) {
         background: $accent-1-light;
