@@ -40,6 +40,14 @@ $main-font: 'Lexend', sans-serif;
     }
 }
 
+.headeranimation {
+    top: 0;
+}
+
+.headeranimationrev {
+    top: -10%;
+}
+
 .header {
     height: 3.25rem;
     width: 100%;
@@ -48,12 +56,12 @@ $main-font: 'Lexend', sans-serif;
     backdrop-filter: blur(4px);
     z-index: 5;
     position: fixed;
-    top: 0;
     display: flex;
     padding-left: 1rem;
     padding-right: 1rem;
     justify-content: space-between;
     align-items: center;
+    transition: top 500ms ease;
 
     .icon {
         height: 2.75rem;
@@ -97,6 +105,13 @@ $main-font: 'Lexend', sans-serif;
         display: grid;
         place-items: center;
         display: none;
+
+        .menuimage {
+            width: 1.75rem;
+            height: 1.75rem;
+            padding-top: 0.25rem;
+        }
+
     }
 
     @media only screen and (max-width: 550px) {
@@ -223,6 +238,7 @@ $main-font: 'Lexend', sans-serif;
                 animation-delay: calc(4000ms + calc(var(--anim-offset) * 500ms));
                 margin-left: 2vw;
                 margin-right: 2vw;
+                transform: translateY(-10000%); // make sure the buttons can't be clicked before the animation
             }
 
         }

@@ -9,6 +9,14 @@
   background-color: #b8b8b870;
 }
 
+.headeranimation {
+  top: 0;
+}
+
+.headeranimationrev {
+  top: -10%;
+}
+
 .header {
   height: 3.25rem;
   width: 100%;
@@ -17,12 +25,12 @@
   backdrop-filter: blur(4px);
   z-index: 5;
   position: fixed;
-  top: 0;
   display: flex;
   padding-left: 1rem;
   padding-right: 1rem;
   justify-content: space-between;
   align-items: center;
+  transition: top 500ms ease;
 }
 .header .icon {
   height: 2.75rem;
@@ -68,6 +76,11 @@
   display: grid;
   place-items: center;
   display: none;
+}
+.header #menubutton .menuimage {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding-top: 0.25rem;
 }
 @media only screen and (max-width: 550px) {
   .header #menubutton {
@@ -191,6 +204,7 @@
   animation-delay: calc(4000ms + var(--anim-offset) * 500ms);
   margin-left: 2vw;
   margin-right: 2vw;
+  transform: translateY(-10000%);
 }
 .main #home .buttoncontainer .mainbuttons:hover {
   background-color: #32e35e;

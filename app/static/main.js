@@ -41,6 +41,7 @@ howbuttonmain.onclick = () => {
 }
 
 // animations
+const header = document.getElementById("header");
 let homePageElements = document.querySelectorAll(".home");
 let titleintersecting = false;
 let bottomintersecting = false;
@@ -62,15 +63,17 @@ let callback = (entries) => {
                 bottomintersecting = false;
             }
         }
-        if (titleintersecting || bottomintersecting) {
+        if (titleintersecting || bottomintersecting) { // handle the animation for the home page and header
             homePageElements.forEach(element => {
                 element.classList.add("animation");
-            })
+            });
+            header.classList.replace("headeranimation", "headeranimationrev");
         }
         if (!bottomintersecting && !titleintersecting) {
             homePageElements.forEach(element => {
                 element.classList.remove("animation");
             });
+            header.classList.replace("headeranimationrev", "headeranimation");
         }   
     });
 };
