@@ -3,7 +3,7 @@
 
 $primary: #ffffff;
 $secondary: scale($primary, $lightness: -5%);
-$tertiary: scale($primary, $lightness: -2%);
+$tertiary: scale($primary, $lightness: -20%);
 $accent-1: #32e35e;
 $accent-2: #27bee8;
 $accent-1-dark: scale($accent-1, $lightness: -5%);
@@ -12,6 +12,8 @@ $accent-1-light: scale($accent-1, $lightness: 60%);
 $accent-2-light: scale($accent-2, $lightness: 60%);
 $selection: #b8b8b870;
 $main-font: 'Lexend', sans-serif;
+$scrollbar-bg: $accent-1-light;
+$scrollbar-handle: $accent-2-dark;
 
 * {
     margin: 0px;
@@ -23,6 +25,20 @@ $main-font: 'Lexend', sans-serif;
         background-color: $selection;
     }
 
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: $scrollbar-bg;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-handle;
+    border-radius: 6px;
+    border: 3px solid $scrollbar-bg;
 }
 
 @mixin basicbutton {
@@ -179,6 +195,7 @@ $main-font: 'Lexend', sans-serif;
 }
 
 .main {
+    
     & section:nth-child(even) {
         background: $accent-1-light;
     }
@@ -291,6 +308,14 @@ $main-font: 'Lexend', sans-serif;
                 transform: translateY(-10000%); // make sure the buttons can't be clicked before the animation
             }
 
+        }
+
+    }
+
+    #what {
+        
+        .text {
+            margin-top: 2rem;
         }
 
     }

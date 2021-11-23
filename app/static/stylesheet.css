@@ -9,6 +9,20 @@
   background-color: #b8b8b870;
 }
 
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #adf4bf;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1bbae7;
+  border-radius: 6px;
+  border: 3px solid #adf4bf;
+}
+
 .headeranimation {
   top: 0;
 }
@@ -270,6 +284,9 @@
 }
 .main #home .buttoncontainer .mainbuttons:hover {
   background-color: #32e35e;
+}
+.main #what .text {
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

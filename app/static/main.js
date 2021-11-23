@@ -45,8 +45,8 @@ let animElements = [
     {
         start: document.querySelector("#hometitle"),
         startid: "hometitle",
-        end: document.querySelector("#home"),
-        endid: "home",
+        end: document.querySelector("#buttoncontainer"),
+        endid: "buttoncontainer",
         elementList: document.querySelectorAll(".home")
     },
     {
@@ -64,7 +64,6 @@ let animElements = [
         elementList: document.querySelectorAll(".why")
     }
 ];
-console.log(animElements);
 const header = document.getElementById("header");
 
 function handleAnimations(start, startid, end, endid, elementList) {
