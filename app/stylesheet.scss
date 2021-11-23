@@ -212,7 +212,6 @@ $main-font: 'Lexend', sans-serif;
             position: absolute;
             left: $posleft;
             top: calc($postop - var(--offset));
-            opacity: 0;
         }
 
         @keyframes dropIn {
@@ -228,16 +227,18 @@ $main-font: 'Lexend', sans-serif;
         }
 
         .animation {
-            animation: dropIn 2s forwards;
+            animation: dropIn 2s backwards;
         }
 
         .circle1 {
             @include circle($accent-1, 9%, 25%);
+            z-index: 1;
             animation-delay: 0ms;
         }
 
         .circle2 {
             @include circle($accent-2, 14%, 17%);
+            z-index: 2;
             animation-delay: 500ms;
         }
 
@@ -251,7 +252,6 @@ $main-font: 'Lexend', sans-serif;
                 padding-right: 0rem;
             }
             background: transparent;
-            opacity: 0;
             z-index: 3;
         }
 
@@ -260,7 +260,6 @@ $main-font: 'Lexend', sans-serif;
             font-weight: lighter;
             margin-top: 2rem;
             background: transparent;
-            opacity: 0;
             animation-delay: 1500ms;
         }
 
@@ -270,7 +269,6 @@ $main-font: 'Lexend', sans-serif;
         
         .learnmore {
             font-size: clamp(calc(var(--font-size) + 2px), 4vw, 25px);
-            opacity: 0;
             animation-delay: 3000ms;
             text-align: center;
             margin-left: 10%;
@@ -287,7 +285,7 @@ $main-font: 'Lexend', sans-serif;
 
             .mainbuttons {
                 @include basicbutton();
-                opacity: 0;
+                animation-fill-mode: forwards;
                 animation-delay: calc(4000ms + calc(var(--anim-offset) * 500ms));
                 margin-left: 2vw;
                 margin-right: 2vw;

@@ -192,7 +192,7 @@
   }
 }
 .main .section .animation {
-  animation: dropIn 2s forwards;
+  animation: dropIn 2s backwards;
 }
 .main .section .circle1 {
   width: 15rem;
@@ -203,7 +203,7 @@
   position: absolute;
   left: 9%;
   top: calc(25% - var(--offset));
-  opacity: 0;
+  z-index: 1;
   animation-delay: 0ms;
 }
 .main .section .circle2 {
@@ -215,7 +215,7 @@
   position: absolute;
   left: 14%;
   top: calc(17% - var(--offset));
-  opacity: 0;
+  z-index: 2;
   animation-delay: 500ms;
 }
 .main .section .title {
@@ -224,7 +224,6 @@
   padding-left: 14rem;
   padding-right: 8rem;
   background: transparent;
-  opacity: 0;
   z-index: 3;
 }
 @media only screen and (max-width: 900px) {
@@ -238,12 +237,10 @@
   font-weight: lighter;
   margin-top: 2rem;
   background: transparent;
-  opacity: 0;
   animation-delay: 1500ms;
 }
 .main #home .learnmore {
   font-size: clamp(var(--font-size) + 2px, 4vw, 25px);
-  opacity: 0;
   animation-delay: 3000ms;
   text-align: center;
   margin-left: 10%;
@@ -266,7 +263,7 @@
   background-color: transparent;
   border: none;
   transition: background-color 300ms;
-  opacity: 0;
+  animation-fill-mode: forwards;
   animation-delay: calc(4000ms + var(--anim-offset) * 500ms);
   margin-left: 2vw;
   margin-right: 2vw;
