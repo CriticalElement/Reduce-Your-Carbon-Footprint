@@ -41,47 +41,80 @@ howbuttonmain.onclick = () => {
 }
 
 // animations
+let animElements = [
+    {
+        start: document.querySelector("#hometitle"),
+        startid: "hometitle",
+        end: document.querySelector("#buttoncontainer"),
+        endid: "buttoncontainer",
+        elementList: document.querySelectorAll(".home")
+    },
+    {
+        start: document.querySelector("#whattitle"),
+        startid: "whattitle",
+        end: document.querySelector("#what"),
+        endid: "what",
+        elementList: document.querySelectorAll(".what")
+    },
+    {
+        start: document.querySelector("#whytitle"),
+        startid: "whytitle",
+        end: document.querySelector("#why"),
+        endid: "why",
+        elementList: document.querySelectorAll(".why")
+    }
+];
+console.log(animElements);
 const header = document.getElementById("header");
-let homePageElements = document.querySelectorAll(".home");
-let titleintersecting = false;
-let bottomintersecting = false;
-let callback = (entries) => {
-    entries.forEach(entry => {
-        if (entry.target.id === "hometitle") {
-            if (entry.isIntersecting) {
-                titleintersecting = true;
-            } 
-            else {
-                titleintersecting = false;
+
+function handleAnimations(start, startid, end, endid, elementList) {
+    let header = document.getElementById("header");
+    let titleintersecting = false;
+    let bottomintersecting = false;
+    let callback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.target.id === startid) {
+                if (entry.isIntersecting) {
+                    titleintersecting = true;
+                } 
+                else {
+                    titleintersecting = false;
+                }
             }
-        }
-        if (entry.target.id == "buttoncontainer") {
-            if (entry.isIntersecting) {
-                bottomintersecting = true;
+            if (entry.target.id == endid) {
+                if (entry.isIntersecting) {
+                    bottomintersecting = true;
+                }
+                else {
+                    bottomintersecting = false;
+                }
             }
-            else {
-                bottomintersecting = false;
+            if (titleintersecting || bottomintersecting) { // handle the animation for the home page and header
+                elementList.forEach(element => {
+                    element.classList.add("animation");
+                });
+                if (startid === "hometitle") {
+                    header.classList.replace("headeranimation", "headeranimationrev");
+                }
             }
-        }
-        if (titleintersecting || bottomintersecting) { // handle the animation for the home page and header
-            homePageElements.forEach(element => {
-                element.classList.add("animation");
-            });
-            header.classList.replace("headeranimation", "headeranimationrev");
-        }
-        if (!bottomintersecting && !titleintersecting) {
-            homePageElements.forEach(element => {
-                element.classList.remove("animation");
-            });
-            header.classList.replace("headeranimationrev", "headeranimation");
-        }   
-    });
-};
-let observer = new IntersectionObserver(
-    callback, 
-    {threshold: 0.2}
-);
-let target = document.querySelector("#hometitle");
-let deactivate = document.querySelector("#buttoncontainer");
-observer.observe(target);
-observer.observe(deactivate);
+            if (!bottomintersecting && !titleintersecting) {
+                elementList.forEach(element => {
+                    element.classList.remove("animation");
+                });
+                if (startid === "hometitle") {
+                    header.classList.replace("headeranimationrev", "headeranimation");
+                }
+            }   
+        });
+    };
+    let observer = new IntersectionObserver(
+        callback, 
+        {threshold: 0.2}
+    );
+    observer.observe(start);
+    observer.observe(end);
+}
+
+animElements.forEach(element => {
+    handleAnimations(element.start, element.startid, element.end, element.endid, element.elementList);
+})
