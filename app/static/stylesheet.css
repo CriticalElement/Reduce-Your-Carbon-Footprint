@@ -252,6 +252,14 @@ body::-webkit-scrollbar-thumb {
     padding-right: 0rem;
   }
 }
+.main .section .learnmore {
+  font-size: clamp(var(--font-size) + 2px, 4vw, 25px);
+  animation-delay: 3000ms;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: normal;
+}
 .main section:nth-child(odd) {
   background: #a9e5f6;
 }
@@ -291,14 +299,6 @@ body::-webkit-scrollbar-thumb {
   padding-right: 4rem;
   text-align: left;
 }
-.main #home .learnmore {
-  font-size: clamp(var(--font-size) + 2px, 4vw, 25px);
-  animation-delay: 3000ms;
-  text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
-  font-weight: normal;
-}
 .main #home .buttoncontainer {
   display: flex;
   align-items: center;
@@ -326,6 +326,22 @@ body::-webkit-scrollbar-thumb {
 }
 .main #what .text {
   margin-top: 2rem;
+}
+.main #what .whattowhy {
+  height: 2.25rem;
+  width: 5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: transparent;
+  border: none;
+  transition: background-color 300ms;
+  animation-fill-mode: forwards;
+  animation-delay: 4500ms;
+  transform: translateY(-10000%);
+}
+.main #what .whattowhy:hover {
+  background-color: #32e35e;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

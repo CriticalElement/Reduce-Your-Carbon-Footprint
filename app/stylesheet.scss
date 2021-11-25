@@ -273,7 +273,16 @@ body::-webkit-scrollbar-thumb {
             }
             animation-delay: 1500ms;
             z-index: 3;
-        }          
+        }
+
+        .learnmore {
+            font-size: clamp(calc(var(--font-size) + 2px), 4vw, 25px);
+            animation-delay: 3000ms;
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-weight: normal;
+        }
 
     }
 
@@ -321,15 +330,6 @@ body::-webkit-scrollbar-thumb {
             padding-right: 4rem;
             text-align: left;
         }
-        
-        .learnmore {
-            font-size: clamp(calc(var(--font-size) + 2px), 4vw, 25px);
-            animation-delay: 3000ms;
-            text-align: center;
-            margin-left: 10%;
-            margin-right: 10%;
-            font-weight: normal;
-        }
 
         .buttoncontainer {
             display: flex;
@@ -355,6 +355,13 @@ body::-webkit-scrollbar-thumb {
         
         .text {
             margin-top: 2rem;
+        }
+
+        .whattowhy {
+            @include basicbutton();
+            animation-fill-mode: forwards;
+            animation-delay: 4500ms;
+            transform: translateY(-10000%);
         }
 
     }
