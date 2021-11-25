@@ -68,6 +68,13 @@ let animElements = [
         end: document.querySelector("#why"),
         endid: "why",
         elementList: document.querySelectorAll(".why")
+    },
+    {
+        start: document.querySelector("#howtitle"),
+        startid: "howtitle",
+        end: document.querySelector("#how"),
+        endid: "how",
+        elementList: document.querySelectorAll(".how")
     }
 ];
 const header = document.getElementById("header");

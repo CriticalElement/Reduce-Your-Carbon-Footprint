@@ -264,6 +264,7 @@ body::-webkit-scrollbar-thumb {
         }
 
         .text {
+            margin-top: 2rem;
             font-size: clamp(var(--font-size), 3vw, 20px);
             font-weight: lighter;
             padding-bottom: 2rem;
@@ -327,6 +328,7 @@ body::-webkit-scrollbar-thumb {
         }
 
         .text {
+            margin-top: 0;
             padding-right: 4rem;
             text-align: left;
         }
@@ -352,10 +354,6 @@ body::-webkit-scrollbar-thumb {
     }
 
     #what {
-        
-        .text {
-            margin-top: 2rem;
-        }
 
         .whattowhy {
             @include basicbutton();

@@ -240,6 +240,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .main .section .text {
+  margin-top: 2rem;
   font-size: clamp(var(--font-size), 3vw, 20px);
   font-weight: lighter;
   padding-bottom: 2rem;
@@ -296,6 +297,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .main #home .text {
+  margin-top: 0;
   padding-right: 4rem;
   text-align: left;
 }
@@ -323,9 +325,6 @@ body::-webkit-scrollbar-thumb {
 }
 .main #home .buttoncontainer .mainbuttons:hover {
   background-color: #32e35e;
-}
-.main #what .text {
-  margin-top: 2rem;
 }
 .main #what .whattowhy {
   height: 2.25rem;
