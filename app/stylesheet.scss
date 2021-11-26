@@ -1,15 +1,15 @@
-@use "sass:color" as *;
+@use "sass:color";
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
 
 $primary: #ffffff;
-$secondary: scale($primary, $lightness: -5%);
-$tertiary: scale($primary, $lightness: -20%);
+$secondary: color.scale($primary, $lightness: -5%);
+$tertiary: color.scale($primary, $lightness: -20%);
 $accent-1: #32e35e;
 $accent-2: #27bee8;
-$accent-1-dark: scale($accent-1, $lightness: -5%);
-$accent-2-dark: scale($accent-2, $lightness: -5%);
-$accent-1-light: scale($accent-1, $lightness: 60%);
-$accent-2-light: scale($accent-2, $lightness: 60%);
+$accent-1-dark: color.scale($accent-1, $lightness: -5%);
+$accent-2-dark: color.scale($accent-2, $lightness: -5%);
+$accent-1-light: color.scale($accent-1, $lightness: 60%);
+$accent-2-light: color.scale($accent-2, $lightness: 60%);
 $selection: #b8b8b870;
 $main-font: 'Lexend', sans-serif;
 $scrollbar-bg: $accent-1-light;
@@ -67,7 +67,7 @@ body::-webkit-scrollbar-thumb {
 .header {
     height: 3.25rem;
     width: 100%;
-    background: scale($secondary, $alpha: -60%);
+    background: color.scale($secondary, $alpha: -60%);
     box-shadow: 0px 0px 1rem #b1b1b1;
     backdrop-filter: blur(4px);
     z-index: 5;
@@ -216,7 +216,7 @@ body::-webkit-scrollbar-thumb {
             width: 15rem;
             height: 15rem;
             border-radius: 50%;
-            background: scale($col, $alpha: -60%);
+            background: color.scale($col, $alpha: -60%);
             backdrop-filter: blur(4px);
             position: absolute;
             left: $posleft;
@@ -372,6 +372,93 @@ body::-webkit-scrollbar-thumb {
 
         .whytohow {
             @include nextpagebutton();
+        }
+
+    }
+
+    #how {
+
+        .title {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .circle1 {
+            top: 11%;
+        }
+
+        .circle2 {
+            top: 6%;
+        }
+        
+        .howgrid {
+            display: grid;
+            gap: 2rem 8rem;
+            grid-template-columns: 1fr 1fr;
+            
+            z-index: 4;
+
+            card {
+                border-radius: 20px;
+                min-width: 15rem;
+                max-width: 20rem;
+                aspect-ratio: 1/1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 1rem;
+                transition: all 200ms ease;
+                animation-fill-mode: backwards;
+
+                h2 {
+                    margin-bottom: 1rem;
+                }
+
+                .spacer {
+                    flex-grow: 2;
+                }
+
+            }
+
+            card:hover {
+                transform: translateY(-5%);
+            }
+
+            & card:nth-of-type(odd) {
+                background: color.scale($accent-2, $alpha: -60%);
+            }
+
+            & card:nth-of-type(even) {
+                background: color.scale($accent-1, $alpha: -60%);
+            }
+
+            .steps {
+                border-radius: 50%;
+                width: 4rem;
+                height: 4rem;
+                font-size: 40px;
+                background: color.scale($tertiary, $alpha: -60%);
+                display: grid;
+                place-items: center;
+            }
+
+            & .steps:nth-child(odd) {
+                margin-left: 16rem;
+            }
+
+            & > * {
+                animation-delay: calc(2000ms + calc(var(--offset) * 500ms));
+            }
+
+            @media only screen and (max-width: 900px) {
+                grid-template-columns: 1fr;
+
+                .steps {
+                    display: none;
+                }
+
+            }
+
         }
 
     }

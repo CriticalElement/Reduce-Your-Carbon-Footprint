@@ -358,5 +358,71 @@ body::-webkit-scrollbar-thumb {
 .main #why .whytohow:hover {
   background-color: #32e35e;
 }
+.main #how .title {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.main #how .circle1 {
+  top: 11%;
+}
+.main #how .circle2 {
+  top: 6%;
+}
+.main #how .howgrid {
+  display: grid;
+  gap: 2rem 8rem;
+  grid-template-columns: 1fr 1fr;
+  z-index: 4;
+}
+.main #how .howgrid card {
+  border-radius: 20px;
+  min-width: 15rem;
+  max-width: 20rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  transition: all 200ms ease;
+  animation-fill-mode: backwards;
+}
+.main #how .howgrid card h2 {
+  margin-bottom: 1rem;
+}
+.main #how .howgrid card .spacer {
+  flex-grow: 2;
+}
+.main #how .howgrid card:hover {
+  transform: translateY(-5%);
+}
+.main #how .howgrid card:nth-of-type(odd) {
+  background: rgba(39, 190, 232, 0.4);
+}
+.main #how .howgrid card:nth-of-type(even) {
+  background: rgba(50, 227, 94, 0.4);
+}
+.main #how .howgrid .steps {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  font-size: 40px;
+  background: rgba(204, 204, 204, 0.4);
+  display: grid;
+  place-items: center;
+}
+.main #how .howgrid .steps:nth-child(odd) {
+  margin-left: 16rem;
+}
+.main #how .howgrid > * {
+  animation-delay: calc(2000ms + var(--offset) * 500ms);
+}
+@media only screen and (max-width: 900px) {
+  .main #how .howgrid {
+    grid-template-columns: 1fr;
+  }
+  .main #how .howgrid .steps {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=stylesheet.css.map */
