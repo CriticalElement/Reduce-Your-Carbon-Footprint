@@ -17,38 +17,24 @@ const whatpage = document.getElementById("what");
 const whypage = document.getElementById("why");
 const howpage = document.getElementById("how");
 
-homebutton.onclick = () => {
-    homepage.scrollIntoView({behavior: "smooth"});
-}
-iconbutton.onclick = () => {
-    homepage.scrollIntoView({behavior: "smooth"});
-}
-whatbutton.onclick = () => {
-    whatpage.scrollIntoView({behavior: "smooth"});
-}
-whybutton.onclick = () => {
-    whypage.scrollIntoView({behavior: "smooth"});
-}
-howbutton.onclick = () => {
-    howpage.scrollIntoView({behavior: "smooth"});
-}
+const buttonLinks = [
+    [homebutton, homepage],
+    [iconbutton, homepage],
+    [whatbutton, whatpage],
+    [whybutton, whypage],
+    [howbutton, howpage],
+    [whatbuttonmain, whatpage],
+    [whybuttonmain, whypage],
+    [howbuttonmain, howpage],
+    [whattowhy, whypage],
+    [whytohow, howpage]
+];
 
-whatbuttonmain.onclick = () => {
-    whatpage.scrollIntoView({behavior: "smooth"});
-}
-whybuttonmain.onclick = () => {
-    whypage.scrollIntoView({behavior: "smooth"});
-}
-howbuttonmain.onclick = () => {
-    howpage.scrollIntoView({behavior: "smooth"});
-}
-
-whattowhy.onclick = () => {
-    whypage.scrollIntoView({behavior: "smooth"});
-}
-whytohow.onclick = () => {
-    howpage.scrollIntoView({behavior: "smooth"});
-}
+buttonLinks.forEach(buttons => {
+    buttons[0].onclick = () => {
+        buttons[1].scrollIntoView({behavior: "smooth"});
+    }
+})
 
 // animations
 let animElements = [

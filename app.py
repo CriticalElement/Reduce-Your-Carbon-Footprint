@@ -5,6 +5,7 @@ from flask_restful import Api
 
 
 app = Flask(__name__, static_url_path='/static', static_folder='app/static/', template_folder='app/templates/')
+# Reload the server every time there is a change to one of the files
 watch_dirs = ['app/static', 'app/templates']
 watch_files = []
 ignore_watch = ['stylesheet.css.map']
