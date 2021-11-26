@@ -342,5 +342,21 @@ body::-webkit-scrollbar-thumb {
 .main #what .whattowhy:hover {
   background-color: #32e35e;
 }
+.main #why .whytohow {
+  height: 2.25rem;
+  width: 5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: transparent;
+  border: none;
+  transition: background-color 300ms;
+  animation-fill-mode: forwards;
+  animation-delay: 4500ms;
+  transform: translateY(-10000%);
+}
+.main #why .whytohow:hover {
+  background-color: #32e35e;
+}
 
 /*# sourceMappingURL=stylesheet.css.map */

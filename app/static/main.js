@@ -10,6 +10,7 @@ const whybuttonmain = document.getElementById("whymainbutton");
 const howbuttonmain = document.getElementById("howmainbutton");
 
 const whattowhy = document.getElementById("whattowhy");
+const whytohow = document.getElementById("whytohow");
 
 const homepage = document.getElementById("home");
 const whatpage = document.getElementById("what");
@@ -44,6 +45,9 @@ howbuttonmain.onclick = () => {
 
 whattowhy.onclick = () => {
     whypage.scrollIntoView({behavior: "smooth"});
+}
+whytohow.onclick = () => {
+    howpage.scrollIntoView({behavior: "smooth"});
 }
 
 // animations

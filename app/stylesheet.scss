@@ -353,13 +353,25 @@ body::-webkit-scrollbar-thumb {
 
     }
 
+    @mixin nextpagebutton() {
+        @include basicbutton();
+        animation-fill-mode: forwards;
+        animation-delay: 4500ms;
+        transform: translateY(-10000%);
+    }
+
     #what {
 
         .whattowhy {
-            @include basicbutton();
-            animation-fill-mode: forwards;
-            animation-delay: 4500ms;
-            transform: translateY(-10000%);
+            @include nextpagebutton();
+        }
+
+    }
+
+    #why {
+
+        .whytohow {
+            @include nextpagebutton();
         }
 
     }
