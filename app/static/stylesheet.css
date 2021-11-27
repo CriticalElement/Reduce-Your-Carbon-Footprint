@@ -393,7 +393,14 @@ body::-webkit-scrollbar-thumb {
   flex-grow: 2;
 }
 .main #how .howgrid card .link {
-  transition: color 200ms ease;
+  color: black;
+  text-decoration: none;
+}
+.main #how .howgrid card .link:hover {
+  text-decoration: underline;
+}
+.main #how .howgrid card .link:visited {
+  color: black;
 }
 .main #how .howgrid card:hover {
   transform: translateY(-5%);
