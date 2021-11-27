@@ -24,7 +24,11 @@ def index():
 
 @app.route('/use_cars_less')
 def use_cars_less():
-    return render_template('use_cars_less.html', svg=open('app/static/icon.svg', 'r').read())
+    return render_template('altpage.html', 
+                           svg=open('app/static/icon.svg', 'r').read(),
+                           title="How to Reduce Your Carbon Footprint",
+                           text="Cars are a major contributor to CO2 emissions in the atmosphere."
+    )
 
 
 if __name__ == '__main__':
