@@ -34,7 +34,7 @@ buttonLinks.forEach(buttons => {
     buttons[0].onclick = () => {
         buttons[1].scrollIntoView({behavior: "smooth"});
     }
-})
+});
 
 // animations
 let animElements = [
