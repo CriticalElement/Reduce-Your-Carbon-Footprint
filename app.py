@@ -26,10 +26,17 @@ def index():
 def use_cars_less():
     return render_template('altpage.html', 
                            svg=open('app/static/icon.svg', 'r').read(),
-                           title="How to Reduce Your Carbon Footprint",
+                           title="How to Reduce Your Carbon Footprint by Using Cars Less",
                            text=open('app/usecarsless.html', 'r').read()
     )
 
+@app.route('/appliances_and_electricity')
+def appliances_and_electricity():
+    return render_template('altpage.html', 
+                           svg=open('app/static/icon.svg', 'r').read(),
+                           title="How to Reduce Your Carbon Footprint by Managing Your Appliances and Electricity Usage",
+                           text=open('app/appliancesandelectricity.html', 'r').read()
+    )
 
 if __name__ == '__main__':
     app.run(port=8000, debug=True, extra_files=watch_files)
