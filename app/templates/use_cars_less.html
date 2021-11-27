@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How To Reduce Your Carbon Footprint by Using Cars Less</title>
+        <link rel="stylesheet" href="static/stylesheet.css"/>
+        <link rel="shortcut icon" type="image/svg" href="static/favicon.svg"/>
+        <script src="static/altpage.js" defer></script>
+    </head>
+    <body class="body">
+        <header class="header" id="header">
+            <!--The SVG gets rendered through Flask templates.-->
+            {{svg|safe}}
+            <div class="spacer"></div>
+            <button class="headerbutton" id="homebutton">Home</button>
+            <button class="headerbutton" id="whatbutton">What?</button>
+            <button class="headerbutton" id="whybutton">Why?</button>
+            <button class="headerbutton" id="howbutton">How?</button>
+            <button class="headerbutton" id="menubutton">
+                <img src="static/menu.png" class="menuimage"/>
+            </button>
+        </header>
+        <div class="dropdown" id="dropdown">
+            <button class="closebutton" id="closebutton">
+                <img src="static/menu.png" id="dropdownicon"/>
+            </button>
+            <div class="container">
+                <button class="dropdownbutton" id="homedropdownbutton">Home</button>
+                <button class="dropdownbutton" id="whatdropdownbutton">What?</button>
+                <button class="dropdownbutton" id="whydropdownbutton">Why?</button>
+                <button class="dropdownbutton" id="howdropdownbutton">How?</button>
+            </div>
+        </div>
+    </body>
+</html>
