@@ -27,7 +27,7 @@ def use_cars_less():
     return render_template('altpage.html', 
                            svg=open('app/static/icon.svg', 'r').read(),
                            title="How to Reduce Your Carbon Footprint",
-                           text="Cars are a major contributor to CO2 emissions in the atmosphere."
+                           text=open('app/usecarsless.html', 'r').read()
     )
 
 
