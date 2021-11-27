@@ -8,7 +8,7 @@ app = Flask(__name__, static_url_path='/static', static_folder='app/static/', te
 # Reload the server every time there is a change to one of the files
 watch_dirs = ['app/static', 'app/templates']
 watch_files = []
-ignore_watch = ['stylesheet.css.map']
+ignore_watch = ['stylesheet.css.map', 'altpage.css.map']
 for dir in watch_dirs:
     for location, _, files in walk(dir):
         for file in files:

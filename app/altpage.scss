@@ -1,0 +1,109 @@
+@use "sass:color";
+@use "master.scss" as *;
+@use "header.scss" as *;
+
+
+.header {
+    @include header();
+}
+
+.dropdown {
+    @include dropdown();
+}
+
+
+.main {
+
+    .section {
+        padding: 3.25rem;
+        box-sizing: border-box;
+        position: relative;
+        min-height: max(45rem, 100vh); 
+        --offset: 0%;
+        --font-size: 15px;
+        @media only screen and (max-width: 450px) {
+            --offset: 7%;
+            --font-size: 12px;
+        }
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        background: $accent-2-light;
+
+        @mixin circle($col, $posleft, $postop) {
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+            background: color.scale($col, $alpha: -60%);
+            backdrop-filter: blur(4px);
+            position: absolute;
+            left: $posleft;
+            top: calc($postop - var(--offset));
+        }
+
+        @keyframes dropIn {
+            from {
+                opacity: 0;
+                transform: translateY(-60%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animation {
+            animation: dropIn 2s backwards;
+        }
+
+        .circle1 {
+            @include circle($accent-1, 9%, 25%);
+            z-index: 1;
+            animation-delay: 0ms;
+        }
+
+        .circle2 {
+            @include circle($accent-2, 14%, 17%);
+            z-index: 2;
+            animation-delay: 500ms;
+        }
+
+        .title {
+            font-size: clamp(1.8vw, 5vw, 50px);
+            text-align: left;
+            padding-left: 14rem;
+            padding-right: 4rem;
+            @media only screen and (max-width: 900px) {
+                padding-left: 0rem;
+                padding-right: 0rem;
+            }
+            z-index: 3;
+        }
+
+        .text {
+            margin-top: 2rem;
+            font-size: clamp(var(--font-size), 3vw, 20px);
+            font-weight: lighter;
+            padding-bottom: 2rem;
+            @media only screen and (max-width: 900px) {
+                padding-left: 0rem;
+                padding-right: 0rem;
+            }
+            animation-delay: 1500ms;
+            z-index: 3;
+        }
+
+        .learnmore {
+            font-size: clamp(calc(var(--font-size) + 2px), 4vw, 25px);
+            animation-delay: 3000ms;
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-weight: normal;
+        }
+
+    }
+
+}

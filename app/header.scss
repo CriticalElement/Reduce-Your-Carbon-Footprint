@@ -1,6 +1,33 @@
 @use "sass:color";
 @use "master.scss" as *;
 
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: $main-font;
+
+    &::selection {
+        background-color: $selection;
+    }
+
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: $scrollbar-bg;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-handle;
+    border-radius: 6px;
+    border: 3px solid $scrollbar-bg;
+}
+
 @mixin header {
     height: 3.25rem;
     width: 100%;

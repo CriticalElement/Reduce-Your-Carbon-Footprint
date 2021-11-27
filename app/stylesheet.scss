@@ -2,31 +2,6 @@
 @use "header.scss" as *;
 @use "master.scss" as *;
 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: $main-font;
-
-    &::selection {
-        background-color: $selection;
-    }
-
-}
-
-body::-webkit-scrollbar {
-    width: 12px;
-}
-
-body::-webkit-scrollbar-track {
-    background: $scrollbar-bg;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: $scrollbar-handle;
-    border-radius: 6px;
-    border: 3px solid $scrollbar-bg;
-}
 
 .headeranimation {
     top: 0;
@@ -192,6 +167,7 @@ body::-webkit-scrollbar-thumb {
 
             .mainbuttons {
                 @include basicbutton();
+                text-decoration: underline;
                 animation-fill-mode: forwards;
                 animation-delay: calc(4000ms + calc(var(--anim-offset) * 500ms));
                 margin-left: 2vw;
@@ -205,6 +181,7 @@ body::-webkit-scrollbar-thumb {
 
     @mixin nextpagebutton() {
         @include basicbutton();
+        text-decoration: underline;
         animation-fill-mode: forwards;
         animation-delay: 4500ms;
         transform: translateY(-10000%);
