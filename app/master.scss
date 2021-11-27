@@ -1,0 +1,31 @@
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+$primary: #ffffff;
+$secondary: color.scale($primary, $lightness: -5%);
+$tertiary: color.scale($primary, $lightness: -20%);
+$accent-1: #32e35e;
+$accent-2: #27bee8;
+$accent-1-dark: color.scale($accent-1, $lightness: -5%);
+$accent-2-dark: color.scale($accent-2, $lightness: -5%);
+$accent-1-light: color.scale($accent-1, $lightness: 60%);
+$accent-2-light: color.scale($accent-2, $lightness: 60%);
+$selection: #b8b8b870;
+$main-font: 'Lexend', sans-serif;
+$scrollbar-bg: $accent-1-light;
+$scrollbar-handle: $accent-2-dark;
+
+@mixin basicbutton {
+    height: 2.25rem;
+    width: 5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: transparent;
+    border: none;
+    transition: background-color 300ms;
+
+    &:hover {
+        background-color: $accent-1;
+    }
+}

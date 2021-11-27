@@ -1,0 +1,132 @@
+@use "sass:color";
+@use "master.scss" as *;
+
+@mixin header {
+    height: 3.25rem;
+    width: 100%;
+    background: color.scale($secondary, $alpha: -60%);
+    box-shadow: 0px 0px 1rem #b1b1b1;
+    backdrop-filter: blur(4px);
+    z-index: 5;
+    position: fixed;
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    transition: top 500ms ease;
+
+    .icon {
+        height: 2.75rem;
+        width: 2.75rem;
+        background: transparent;
+
+        & .outercircle {
+            fill: rgba(0, 0, 0, 0);
+            transition: 300ms;
+        }
+        
+        &:hover .outercircle {
+            fill: $accent-2;
+        }
+
+        & .fill1, .fill2 {
+            stroke: rgba(0, 0, 0, 0);
+            transition: 300ms;
+        }
+
+        &:hover .fill1, &:hover .fill2 {
+            stroke: $accent-1;
+        }
+
+        cursor: pointer;
+    }
+
+    .spacer {
+        flex-grow: 3;
+        max-width: 50%;
+    }
+
+    .headerbutton {
+        @include basicbutton();
+        display: block;
+    }
+
+    #menubutton {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: grid;
+        place-items: center;
+        display: none;
+
+        .menuimage {
+            width: 1.75rem;
+            height: 1.75rem;
+            padding-top: 0.25rem;
+        }
+
+    }
+
+    @media only screen and (max-width: 550px) {
+        #menubutton {
+            display: block;
+        }
+
+        .headerbutton {
+            display: none;
+        }
+    }
+}
+
+@mixin dropdown {
+    position: fixed;
+    height: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: $primary;
+    transition: all 500ms ease;
+
+    .closebutton {
+        @include basicbutton();
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: calc(calc(3.25rem - 2.5rem) / 2);
+        right: 16px;
+        display: none;
+        opacity: 0;
+        place-items: center;
+        transition: all 500ms ease;
+
+        .dropdownicon {
+            width: 1.75rem;
+            height: 1.75rem;
+            padding-top: 0.25rem;
+            opacity: 0;
+            display: none;
+        }
+
+    }
+
+    .container {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+
+        .dropdownbutton {
+            @include basicbutton();
+            opacity: 0;
+            display: none;
+            transition: all 500ms ease;
+        }
+
+    }
+
+}

@@ -200,7 +200,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .main .section .animation {
-  animation: dropIn 2s both;
+  animation: dropIn 2s backwards;
 }
 .main .section .circle1 {
   width: 15rem;
@@ -359,14 +359,14 @@ body::-webkit-scrollbar-thumb {
   background-color: #32e35e;
 }
 .main #how .title {
-  margin-top: 4rem;
+  margin-top: 8rem;
   margin-bottom: 4rem;
 }
 .main #how .circle1 {
-  top: 11%;
+  top: 14%;
 }
 .main #how .circle2 {
-  top: 6%;
+  top: 9%;
 }
 .main #how .howgrid {
   display: grid;
@@ -391,6 +391,9 @@ body::-webkit-scrollbar-thumb {
 }
 .main #how .howgrid card .spacer {
   flex-grow: 2;
+}
+.main #how .howgrid card .link {
+  transition: color 200ms ease;
 }
 .main #how .howgrid card:hover {
   transform: translateY(-5%);

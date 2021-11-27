@@ -111,7 +111,7 @@ function handleAnimations(start, startid, end, endid, elementList) {
     };
     let observer = new IntersectionObserver(
         callback, 
-        {threshold: 0.1}
+        {threshold: 0.05}
     );
     observer.observe(start);
     observer.observe(end);
