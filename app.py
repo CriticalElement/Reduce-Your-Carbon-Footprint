@@ -38,5 +38,13 @@ def appliances_and_electricity():
                            text=open('app/appliancesandelectricity.html', 'r').read()
     )
 
+@app.route('/reduce_reuse_recycle')
+def reduce_reuse_recycle():
+    return render_template('altpage.html', 
+                           svg=open('app/static/icon.svg', 'r').read(),
+                           title="How to Reduce Your Carbon Footprint by Reducing, Reusing, and Recycling",
+                           text=open('app/reducereuserecycle.html', 'r').read()
+    )
+
 if __name__ == '__main__':
     app.run(port=8000, debug=True, extra_files=watch_files)
