@@ -165,6 +165,7 @@ body::-webkit-scrollbar-thumb {
 
 .main .section {
   padding: 3.25rem;
+  padding-top: 4.5rem;
   box-sizing: border-box;
   position: relative;
   min-height: max(45rem, 100vh);
@@ -245,6 +246,10 @@ body::-webkit-scrollbar-thumb {
     padding-left: 0rem;
     padding-right: 0rem;
   }
+}
+.main .section .image {
+  width: clamp(1rem, 15vw, 5rem);
+  animation-delay: 2500ms;
 }
 .main .section .learnmore {
   font-size: clamp(var(--font-size) + 2px, 4vw, 25px);

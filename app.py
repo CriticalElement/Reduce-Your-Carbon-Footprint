@@ -26,7 +26,6 @@ def index():
 def use_cars_less():
     return render_template('altpage.html', 
                            svg=open('app/static/icon.svg', 'r').read(),
-                           title="How to Reduce Your Carbon Footprint by Using Cars Less",
                            text=open('app/usecarsless.html', 'r').read()
     )
 
@@ -34,7 +33,6 @@ def use_cars_less():
 def appliances_and_electricity():
     return render_template('altpage.html', 
                            svg=open('app/static/icon.svg', 'r').read(),
-                           title="How to Reduce Your Carbon Footprint by Managing Your Appliances and Electricity Usage",
                            text=open('app/appliancesandelectricity.html', 'r').read()
     )
 
@@ -42,7 +40,6 @@ def appliances_and_electricity():
 def reduce_reuse_recycle():
     return render_template('altpage.html', 
                            svg=open('app/static/icon.svg', 'r').read(),
-                           title="How to Reduce Your Carbon Footprint by Reducing, Reusing, and Recycling",
                            text=open('app/reducereuserecycle.html', 'r').read()
     )
 

@@ -16,6 +16,7 @@
 
     .section {
         padding: 3.25rem;
+        padding-top: 4.5rem;
         box-sizing: border-box;
         position: relative;
         min-height: max(45rem, 100vh); 
@@ -93,6 +94,11 @@
             }
             animation-delay: 1500ms;
             z-index: 3;
+        }
+
+        .image {
+            width: clamp(1rem, 15vw, 5rem);
+            animation-delay: 2500ms;
         }
 
         .learnmore {
