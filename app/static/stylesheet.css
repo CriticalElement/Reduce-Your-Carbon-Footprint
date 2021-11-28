@@ -451,6 +451,10 @@ body::-webkit-scrollbar-thumb {
     display: none;
   }
 }
+.main #how .learnmore {
+  padding-top: 2rem;
+  animation-delay: 6000ms;
+}
 
 footer {
   display: flex;
@@ -469,7 +473,7 @@ footer .footercontainer {
   justify-content: center;
 }
 footer .footercontainer .link, footer .footercontainer .link:visited {
-  color: #1bbae7;
+  color: black;
 }
 footer .footercontainer * {
   margin-left: 0.5rem;
