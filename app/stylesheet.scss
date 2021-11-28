@@ -42,7 +42,6 @@
             height: 15rem;
             border-radius: 50%;
             background: color.scale($col, $alpha: -60%);
-            @debug color.scale($col, $alpha: -60%);
             backdrop-filter: blur(4px);
             position: absolute;
             left: $posleft;
@@ -314,6 +313,47 @@
                     display: none;
                 }
 
+            }
+
+        }
+
+    }
+
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 8rem;
+    background: $accent-1-light;
+
+    svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footercontainer {
+        display: flex;
+        justify-content: center;
+        
+        
+        .link, .link:visited {
+            color: $accent-2-dark;
+        }
+
+        & * {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            flex-direction: column;
+
+            & * {
+                margin-top: 0.25rem;
+                margin-bottom: 0.25rem
             }
 
         }
