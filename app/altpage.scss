@@ -101,6 +101,10 @@
             animation-delay: 2500ms;
         }
 
+        .caption {
+            text-align: center;
+        }
+
         .learnmore {
             font-size: clamp(calc(var(--font-size) + 2px), 4vw, 25px);
             animation-delay: 3000ms;

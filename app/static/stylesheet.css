@@ -447,7 +447,7 @@ body::-webkit-scrollbar-thumb {
   .main #how .howgrid {
     grid-template-columns: 1fr;
   }
-  .main #how .howgrid .steps {
+  .main #how .howgrid .stepscontainer {
     display: none;
   }
 }

@@ -251,6 +251,9 @@ body::-webkit-scrollbar-thumb {
   width: clamp(1rem, 15vw, 5rem);
   animation-delay: 2500ms;
 }
+.main .section .caption {
+  text-align: center;
+}
 .main .section .learnmore {
   font-size: clamp(var(--font-size) + 2px, 4vw, 25px);
   animation-delay: 3000ms;

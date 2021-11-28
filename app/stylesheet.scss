@@ -42,6 +42,7 @@
             height: 15rem;
             border-radius: 50%;
             background: color.scale($col, $alpha: -60%);
+            @debug color.scale($col, $alpha: -60%);
             backdrop-filter: blur(4px);
             position: absolute;
             left: $posleft;
@@ -309,7 +310,7 @@
             @media only screen and (max-width: 900px) {
                 grid-template-columns: 1fr;
 
-                .steps {
+                .stepscontainer {
                     display: none;
                 }
 
