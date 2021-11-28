@@ -414,7 +414,17 @@ body::-webkit-scrollbar-thumb {
 .main #how .howgrid card:nth-of-type(even) {
   background: rgba(50, 227, 94, 0.4);
 }
-.main #how .howgrid .steps {
+.main #how .howgrid .stepscontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  min-width: 15rem;
+  max-width: 20rem;
+}
+.main #how .howgrid .stepscontainer .steps {
   border-radius: 50%;
   width: 4rem;
   height: 4rem;
@@ -422,11 +432,15 @@ body::-webkit-scrollbar-thumb {
   background: rgba(204, 204, 204, 0.4);
   display: grid;
   place-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.main #how .howgrid .steps:nth-child(odd) {
-  margin-left: 16rem;
+.main #how .howgrid .stepscontainer:nth-child(odd) .steps {
+  left: auto;
+  right: 0;
 }
-.main #how .howgrid > * {
+.main #how .howgrid card, .main #how .howgrid .steps {
   animation-delay: calc(2000ms + var(--offset) * 500ms);
 }
 @media only screen and (max-width: 900px) {

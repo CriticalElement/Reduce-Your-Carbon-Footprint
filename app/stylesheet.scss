@@ -272,21 +272,37 @@
                 background: color.scale($accent-1, $alpha: -60%);
             }
 
-            .steps {
-                border-radius: 50%;
-                width: 4rem;
-                height: 4rem;
-                font-size: 40px;
-                background: color.scale($tertiary, $alpha: -60%);
-                display: grid;
-                place-items: center;
+            .stepscontainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                height: 100%;
+                min-width: 15rem;
+                max-width: 20rem;
+
+                .steps {
+                    border-radius: 50%;
+                    width: 4rem;
+                    height: 4rem;
+                    font-size: 40px;
+                    background: color.scale($tertiary, $alpha: -60%);
+                    display: grid;
+                    place-items: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                } 
+                
             }
 
-            & .steps:nth-child(odd) {
-                margin-left: 16rem;
+            & .stepscontainer:nth-child(odd) .steps {
+                left: auto;
+                right: 0;
             }
 
-            & > * {
+            & card, .steps {
                 animation-delay: calc(2000ms + calc(var(--offset) * 500ms));
             }
 
