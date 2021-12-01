@@ -41,8 +41,8 @@ let animElements = [
     {
         start: document.querySelector("#hometitle"),
         startid: "hometitle",
-        end: document.querySelector("#buttoncontainer"),
-        endid: "buttoncontainer",
+        end: document.querySelector("#home"),
+        endid: "home",
         elementList: document.querySelectorAll(".home")
     },
     {

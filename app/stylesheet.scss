@@ -8,7 +8,7 @@
 }
 
 .headeranimationrev {
-    top: -10%;
+    top: -3.25rem;
 }
 
 .header {
@@ -292,15 +292,49 @@
                     place-items: center;
                     position: absolute;
                     top: 0;
-                    left: 0;
-                } 
+                    left: -4.25rem;
+                    z-index: 6;
+                }
+
+                @keyframes grow {
+                    from {
+                        height: 0;
+                        opacity: 0;
+                    }
+
+                    to {
+                        height: 64rem;
+                        opacity: 1;
+                    }
+                }
+
+                .line {
+                    z-index: 5;
+                    height: 64rem;
+                    width: 1rem;
+                    border-radius: 15px;
+                    background: black;
+                    position: absolute;
+                    top: 0;
+                    left: -4.5rem;
+
+                    &.animation {
+                        animation: grow 5s ease backwards;
+                        animation-delay: 2000ms;
+                    }
+
+                }
                 
             }
 
-            & .stepscontainer:nth-child(odd) .steps {
-                left: auto;
-                right: 0;
-            }
+            & .stepscontainer:nth-child(odd) {
+
+                .steps {
+                    left: auto;
+                    right: -4.25rem;
+                } 
+
+            } 
 
             & card, .steps {
                 animation-delay: calc(2000ms + calc(var(--offset) * 500ms));
