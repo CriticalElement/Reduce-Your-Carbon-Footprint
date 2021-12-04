@@ -24,14 +24,20 @@ def index():
 
 @app.route('/use_cars_less')
 def use_cars_less():
-    return render_template('altpage.html', 
+    return render_template('altpage.html',
+                           title='How to Reduce Your Carbon Footprint by Using Cars Less',
+                           description='This is an article that teaches you how to reduce your carbon footprint by '
+                           'using cars less.',
                            svg=open('app/static/icon.svg', 'r').read(),
                            text=open('app/usecarsless.html', 'r').read()
     )
 
 @app.route('/appliances_and_electricity')
 def appliances_and_electricity():
-    return render_template('altpage.html', 
+    return render_template('altpage.html',
+                           title='How to Reduce Your Carbon Footprint by Managing Your Appliances and Electricity',
+                           description='This is an article that teaches you how to reduce your carbon footprint by '
+                           'managing your appliances and electricity.',
                            svg=open('app/static/icon.svg', 'r').read(),
                            text=open('app/appliancesandelectricity.html', 'r').read()
     )
@@ -39,6 +45,9 @@ def appliances_and_electricity():
 @app.route('/reduce_reuse_recycle')
 def reduce_reuse_recycle():
     return render_template('altpage.html', 
+                           title='How to Reduce Your Carbon Footprint by Reducing, Reusing, and Recycling',
+                           description='This is an article that teaches you how to reduce your carbon footprint by '
+                           'reducing, reusing, and recycling.',
                            svg=open('app/static/icon.svg', 'r').read(),
                            text=open('app/reducereuserecycle.html', 'r').read()
     )

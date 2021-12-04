@@ -292,7 +292,7 @@ body::-webkit-scrollbar-thumb {
   text-align: left;
 }
 .main #home .title, .main #home .text {
-  padding-left: 10rem;
+  padding-left: 17%;
   padding-right: 10rem;
 }
 @media only screen and (max-width: 900px) {
