@@ -254,6 +254,15 @@ body::-webkit-scrollbar-thumb {
     padding-right: 0rem;
   }
 }
+.main .section .text .link {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 2px;
+  color: black;
+}
+.main .section .text .link:visited {
+  color: black;
+}
 .main .section .learnmore {
   font-size: clamp(var(--font-size) + 2px, 4vw, 25px);
   animation-delay: 3000ms;
@@ -514,7 +523,7 @@ footer .footercontainer * {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 850px) {
   footer .footercontainer {
     flex-direction: column;
   }

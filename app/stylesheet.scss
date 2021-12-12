@@ -100,6 +100,18 @@
             }
             animation-delay: 1500ms;
             z-index: 3;
+
+            .link {
+                text-decoration: underline;
+                text-decoration-style: dashed;
+                text-decoration-thickness: 2px;
+                color: black;
+            }
+
+            .link:visited {
+                color: black;
+            }
+
         }
 
         .learnmore {
@@ -395,7 +407,7 @@ footer {
             margin-right: 0.5rem;
         }
         
-        @media only screen and (max-width: 750px) {
+        @media only screen and (max-width: 850px) {
             flex-direction: column;
 
             & * {
