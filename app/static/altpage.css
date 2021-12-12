@@ -237,6 +237,7 @@ body::-webkit-scrollbar-thumb {
   margin-top: 2rem;
   font-size: clamp(var(--font-size), 3vw, 20px);
   font-weight: lighter;
+  max-width: 110ch;
   padding-bottom: 2rem;
   animation-delay: 1500ms;
   z-index: 3;

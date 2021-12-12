@@ -26,8 +26,8 @@ def index():
 def use_cars_less():
     return render_template('altpage.html',
                            title='How to Reduce Your Carbon Footprint by Using Cars Less',
-                           description='This is an article that teaches you how to reduce your carbon footprint by '
-                           'using cars less.',
+                           description='Cars are the biggest contributor to CO2 emissions in the atmosphere. By '
+                           'using cars less, your carbon footprint will substantially decrease.',
                            svg=open('app/static/icon.svg', 'r').read(),
                            text=open('app/usecarsless.html', 'r').read()
     )
@@ -36,8 +36,9 @@ def use_cars_less():
 def appliances_and_electricity():
     return render_template('altpage.html',
                            title='How to Reduce Your Carbon Footprint by Managing Your Appliances and Electricity',
-                           description='This is an article that teaches you how to reduce your carbon footprint by '
-                           'managing your appliances and electricity.',
+                           description='Inefficient usage of appliances can greatly increase your electricity '
+                           'usage, which will increase your carbon footprint. Instead, learn how to decrease '
+                           'your carbon footprint by managing your appliances and electricity usage.',
                            svg=open('app/static/icon.svg', 'r').read(),
                            text=open('app/appliancesandelectricity.html', 'r').read()
     )
@@ -46,8 +47,8 @@ def appliances_and_electricity():
 def reduce_reuse_recycle():
     return render_template('altpage.html', 
                            title='How to Reduce Your Carbon Footprint by Reducing, Reusing, and Recycling',
-                           description='This is an article that teaches you how to reduce your carbon footprint by '
-                           'reducing, reusing, and recycling.',
+                           description='By reducing, reusing, and recycling, you will have stopped trash from going '
+                           'into a landfill or an incinerator, which will increase CO2 levels in our atmosphere.',
                            svg=open('app/static/icon.svg', 'r').read(),
                            text=open('app/reducereuserecycle.html', 'r').read()
     )

@@ -92,6 +92,7 @@
             margin-top: 2rem;
             font-size: clamp(var(--font-size), 3vw, 20px);
             font-weight: lighter;
+            max-width: 110ch;
             padding-bottom: 2rem;
             @media only screen and (max-width: 900px) {
                 padding-left: 0rem;
