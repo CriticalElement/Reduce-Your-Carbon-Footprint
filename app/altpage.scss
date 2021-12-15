@@ -18,7 +18,6 @@
         padding: 3.25rem;
         padding-top: 4.5rem;
         box-sizing: border-box;
-        position: relative;
         min-height: max(45rem, 100vh); 
         --offset: 0%;
         --font-size: 15px;
@@ -95,6 +94,32 @@
             }
             animation-delay: 1500ms;
             z-index: 3;
+        }
+
+        .text {
+            margin-top: 2rem;
+            font-size: clamp(var(--font-size), 3vw, 20px);
+            font-weight: lighter;
+            max-width: 80ch;
+            padding-bottom: 2rem;
+            @media only screen and (max-width: 900px) {
+                padding-left: 0rem;
+                padding-right: 0rem;
+            }
+            animation-delay: 1500ms;
+            z-index: 3;
+
+            .link {
+                text-decoration: underline;
+                text-decoration-style: dashed;
+                text-decoration-thickness: 2px;
+                color: black;
+            }
+
+            .link:visited {
+                color: black;
+            }
+
         }
 
         .image {
