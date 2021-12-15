@@ -512,6 +512,13 @@ footer svg {
   width: 50px;
   height: 50px;
 }
+footer .footertext {
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 footer .footercontainer {
   display: flex;
   justify-content: center;
